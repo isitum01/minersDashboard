@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import agent from "../../app/api/agent";
+import Miner from "../../features/miners/Miner/Miner";
+import styles from "./Dashboard.module.scss"
 
+/**
+ * Function representing the view corresponding to the Dashboard page.
+ */
 export default function Dashboard() {
   const [miners, setMiners] = useState<Miner[]>([]);
 
@@ -11,8 +16,8 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div>
-      <ul>{miners && miners.map((miner) => <li>{miner.port}</li>)}</ul>
+    <div className={styles.dashboard}>
+      <ul>{miners && miners.map((miner) => <Miner miner={miner} />)}</ul>
     </div>
   );
 }
