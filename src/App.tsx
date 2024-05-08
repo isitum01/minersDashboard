@@ -1,5 +1,11 @@
+import Dashboard from "./views/Dashboard/Dashboard";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Dashboard />
+    </>
+  );
 }
 
 export default App;
