@@ -17,9 +17,15 @@ export default observer(function Dashboard() {
 
   return (
     <div className={styles.dashboard}>
-      {groupedMiners.map(([groupIndex, miners]) => (
-        <MinerGroup key={groupIndex} groupIndex={groupIndex} miners={miners} />
-      ))}
+      <div className={styles.container}>
+        {groupedMiners.map(([groupIndex, miners]) => (
+          <MinerGroup
+            key={groupIndex}
+            groupIndex={groupIndex}
+            miners={miners}
+          />
+        ))}
+      </div>
     </div>
   );
 });

@@ -1,11 +1,15 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
+import StatusData from "../../models/StatusData";
+import { getMinorStatus } from "../../helpers/StatusHelper";
 
 /**
  * MinerStore class
  */
 export default class MinerStore {
   miners: Miner[] = [];
+  selectedMiner: Miner | null = null;
+  selectedMinerStatus: StatusData | null = null;
 
   /**
    * MinerStore class constructor
