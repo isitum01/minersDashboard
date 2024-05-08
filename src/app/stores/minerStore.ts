@@ -30,4 +30,26 @@ export default class MinerStore {
       console.log(error);
     }
   };
+
+  /**
+   * Function returns miners grouped by pdu property
+   */
+  get groupedMiners() {
+    return Object.entries(
+      this.minersByGroup.reduce((miners, miner) => {
+        const groupIndex = miner.pdu.toString();
+        miners[groupIndex] = miners[groupIndex]
+          ? [...miners[groupIndex], miner]
+          : [miner];
+        return miners;
+      }, {} as { [key: string]: Miner[] })
+    );
+  }
+
+  /**
+   * Sorting minors by group
+   */
+  get minersByGroup() {
+    return Array.from(this.miners.values()).sort((a, b) => a.pdu - b.pdu);
+  }
 }
