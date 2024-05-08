@@ -8,12 +8,5 @@ interface MinerProps {
  * Component used for displaying single Miner information
  */
 export default function Miner({ miner }: MinerProps) {
-
-  return (
-    <div
-      className={styles.miner}
-    >
-      {miner.port}
-    </div>
-  );
+  return <div className={styles.miner}>{miner.port}</div>;
 }
