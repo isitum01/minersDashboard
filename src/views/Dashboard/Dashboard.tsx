@@ -15,10 +15,6 @@ export default observer(function Dashboard() {
     minerStore.loadMiners();
   }, []);
 
-  useEffect(() => {
-    console.log(groupedMiners);
-  }, [minerStore.miners]);
-
   return (
     <div className={styles.dashboard}>
       {groupedMiners.map(([groupIndex, miners]) => (
