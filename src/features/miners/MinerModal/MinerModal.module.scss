@@ -1,0 +1,55 @@
+.modal {
+  //   background: rgb(176, 171, 171);
+  background: white;
+  min-width: 150px;
+  min-height: 150px;
+  position: absolute;
+  transform: translateY(-100%);
+  padding: 16px;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .close {
+    text-align: right;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: red;
+    border: 1px solid red;
+    padding: 4px;
+    line-height: 1;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid grey;
+    padding-top: 8px;
+
+    .status {
+      padding: 8px;
+      margin: 0;
+    }
+
+    .toggleInfo {
+      cursor: pointer;
+      color: blue;
+      text-align: right;
+    }
+
+    .moreInfo {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+
+      & > p {
+        background: rgb(155, 155, 155);
+        margin: 0;
+        padding: 8px;
+      }
+    }
+  }
+}
