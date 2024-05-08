@@ -1,11 +1,15 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
+import StatusData from "../../models/StatusData";
+import { getMinorStatus } from "../../helpers/StatusHelper";
 
 /**
  * MinerStore class
  */
 export default class MinerStore {
   miners: Miner[] = [];
+  selectedMiner: Miner | null = null;
+  selectedMinerStatus: StatusData | null = null;
 
   /**
    * MinerStore class constructor
@@ -51,5 +55,13 @@ export default class MinerStore {
    */
   get minersByGroup() {
     return Array.from(this.miners.values()).sort((a, b) => a.pdu - b.pdu);
+  }
+
+  /**
+   * Sets selected Miner (used to populate modal data)
+   */
+  setSelectedMiner(miner: Miner) {
+    this.selectedMiner = miner;
+    this.selectedMinerStatus = getMinorStatus(miner.s!);
   }
 }

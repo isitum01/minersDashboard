@@ -1,7 +1,13 @@
+
 .dashboard {
-  ul {
-    display: flex;
-    flex-wrap: wrap;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 8px;
   }
 }
