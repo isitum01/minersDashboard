@@ -3,6 +3,7 @@ import styles from "./Dashboard.module.scss";
 import { useStore } from "../../app/stores/store";
 import { observer } from "mobx-react-lite";
 import MinerGroup from "../../features/miners/MinerGroup/MinerGroup";
+import MinerModal from "../../features/miners/MinerModal/MinerModal";
 
 /**
  * Function representing the view corresponding to the Dashboard page.
@@ -26,6 +27,7 @@ export default observer(function Dashboard() {
           />
         ))}
       </div>
+      <MinerModal />
     </div>
   );
 });

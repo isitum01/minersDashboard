@@ -56,4 +56,12 @@ export default class MinerStore {
   get minersByGroup() {
     return Array.from(this.miners.values()).sort((a, b) => a.pdu - b.pdu);
   }
+
+  /**
+   * Sets selected Miner (used to populate modal data)
+   */
+  setSelectedMiner(miner: Miner) {
+    this.selectedMiner = miner;
+    this.selectedMinerStatus = getMinorStatus(miner.s!);
+  }
 }
