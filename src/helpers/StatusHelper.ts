@@ -4,7 +4,7 @@ import StatusData from "../models/StatusData";
  * Gets status data based on status code
  * @param statusCode
  */
-export const getMinorStatus = (statusCode: number) => {
+export const getMinerStatus = (statusCode: number) => {
   switch (statusCode) {
     case 10:
       return new StatusData(statusCode, "#50C804", "OK");

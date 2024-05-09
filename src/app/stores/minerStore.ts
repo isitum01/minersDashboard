@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
 import StatusData from "../../models/StatusData";
-import { getMinorStatus } from "../../helpers/StatusHelper";
+import { getMinerStatus } from "../../helpers/StatusHelper";
 
 /**
  * MinerStore class
@@ -60,8 +60,8 @@ export default class MinerStore {
   /**
    * Sets selected Miner (used to populate modal data)
    */
-  setSelectedMiner(miner: Miner) {
+  setSelectedMiner(miner: Miner | null) {
     this.selectedMiner = miner;
-    this.selectedMinerStatus = getMinorStatus(miner.s!);
+    if (miner != null) this.selectedMinerStatus = getMinerStatus(miner.s!);
   }
 }
