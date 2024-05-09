@@ -6,5 +6,5 @@ type DashboardData = {
   name: string;
   label: string;
   values: Miner[];
-  version: string;
+  version: number;
 };
