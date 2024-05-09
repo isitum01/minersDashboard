@@ -1,13 +1,37 @@
-
 .dashboard {
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  position: relative;
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
+    border: 1px solid rgba($color: white, $alpha: 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000000;
+
+    .info {
+      border-bottom: 1px solid rgba($color: white, $alpha: 0.2);
+      background: rgba($color: #000000, $alpha: 0.7);
+      padding: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 8px;
+      padding: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 840px) {
+    .container {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 }

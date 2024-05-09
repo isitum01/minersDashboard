@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
 import StatusData from "../../models/StatusData";
-import { getMinorStatus } from "../../helpers/StatusHelper";
+import { getMinerStatus } from "../../helpers/StatusHelper";
 
 /**
  * MinerStore class
@@ -10,6 +10,7 @@ export default class MinerStore {
   miners: Miner[] = [];
   selectedMiner: Miner | null = null;
   selectedMinerStatus: StatusData | null = null;
+  dashboardInfo: DashboardData | null = null;
 
   /**
    * MinerStore class constructor
@@ -28,7 +29,8 @@ export default class MinerStore {
       const fetchedMiners = await agent.Miners.list();
 
       runInAction(() => {
-        this.miners = fetchedMiners["19"].values;
+        this.dashboardInfo = fetchedMiners["19"];
+        this.miners = this.dashboardInfo.values;
       });
     } catch (error) {
       console.log(error);
@@ -60,8 +62,8 @@ export default class MinerStore {
   /**
    * Sets selected Miner (used to populate modal data)
    */
-  setSelectedMiner(miner: Miner) {
+  setSelectedMiner(miner: Miner | null) {
     this.selectedMiner = miner;
-    this.selectedMinerStatus = getMinorStatus(miner.s!);
+    if (miner != null) this.selectedMinerStatus = getMinerStatus(miner.s!);
   }
 }

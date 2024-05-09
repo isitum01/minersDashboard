@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Miner.module.scss";
 import StatusData from "../../../models/StatusData";
-import { getMinorStatus } from "../../../helpers/StatusHelper";
+import { getMinerStatus } from "../../../helpers/StatusHelper";
 import { useStore } from "../../../app/stores/store";
 
 interface MinerProps {
@@ -13,10 +13,10 @@ interface MinerProps {
  */
 export default function Miner({ miner }: MinerProps) {
   const [status, setStatus] = useState<StatusData | undefined>(undefined);
-  const { minerStore, modalStore } = useStore();
+  const { minerStore } = useStore();
 
   useEffect(() => {
-    const minerStatus = getMinorStatus(miner.s!);
+    const minerStatus = getMinerStatus(miner.s!);
     setStatus(minerStatus);
   }, []);
 
@@ -24,8 +24,7 @@ export default function Miner({ miner }: MinerProps) {
     <div
       className={styles.miner}
       style={{ backgroundColor: status?.color }}
-      onClick={(e) => {
-        modalStore.setModalCoordinates(e.clientX, e.clientY);
+      onClick={() => {
         minerStore.setSelectedMiner(miner);
       }}
     >
