@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# HashSmith Task Project Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About project
 
-Currently, two official plugins are available:
+- Project represents a dashboard that provides information on a group of miners
+- Project is initialized using [ViteJS](https://vitejs.dev/) and uses MobX as a state container
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Environment
 
-## Expanding the ESLint configuration
+- Node v21.6.2
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Stack
 
-- Configure the top-level `parserOptions` property like this:
+<div style="display: flex; gap: 12px;">
+    <a href="https://reactjs.org/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="react" width="30"/>
+    </a>
+    <a href="https://www.typescriptlang.org/" target="_blank" style="text-decoration: none">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="typescript" width="30" />
+    </a>
+    <a href="https://vitejs.dev/" target="_blank" style="text-decoration: none">
+      <img src="https://vitejs.dev/logo.svg" alt="vitejs" width="30" />
+    </a>
+    <a href="https://mobx.js.org/README.html" target="_blank" style="text-decoration: none">
+      <img src="https://mobx.js.org/assets/mobx.png" alt="mobx" width="30" />
+    </a>
+    <a href="https://sass-lang.com/" target="_blank" style="text-decoration: none">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="sass" width="30" />
+    </a>
+</div>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Running a project
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- To run the project locally, ensure you have NodeJS version 21.6.2 installed. While the code may work with other versions, it is recommended to use NodeJS v21.6.2 for optimal compatibility.
+- Navigate to the root folder of the project.
+- Run the `yarn install` command to install all the required packages.
+- After the packages have been installed run the `yarn start` command to start the local server
+- Open your preferred web browser and navigate to the following URL: `http://localhost:3000`
+- You should now have the project running locally on your machine.
+- Run the `yarn build` command for building a project for production. Static files will be generated in the `dist` folder.
+
+### Note:
+
+This task project is fully packaged and prepared for testing. To launch it, simply navigate to the `dist` folder in your file explorer and open the `index.html` file using your preferred web browser.
