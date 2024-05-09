@@ -5,6 +5,12 @@
 - Project represents a dashboard that provides information on a group of miners
 - Project is initialized using [ViteJS](https://vitejs.dev/) and uses MobX as a state container
 
+## Screenshots
+<div style="display: flex; gap: 12px;">
+  <div><img src="./public/dashboard_screen.jpg" alt="Dashboard image"/></div>
+  <div><img src="./public/modal_open_screen.jpg" alt=""Modal open image"/></div>  
+</div>
+
 ## Environment
 
 - Node v21.6.2
