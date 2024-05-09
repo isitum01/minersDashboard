@@ -10,7 +10,7 @@ import MinerModal from "../../features/miners/MinerModal/MinerModal";
  */
 export default observer(function Dashboard() {
   const { minerStore } = useStore();
-  const { groupedMiners } = minerStore;
+  const { groupedMiners, dashboardInfo } = minerStore;
 
   useEffect(() => {
     minerStore.loadMiners();
@@ -19,13 +19,18 @@ export default observer(function Dashboard() {
   return (
     <div className={styles.dashboard}>
       <div className={styles.container}>
-        {groupedMiners.map(([groupIndex, miners]) => (
-          <MinerGroup
-            key={groupIndex}
-            groupIndex={groupIndex}
-            miners={miners}
-          />
-        ))}
+        <div className={styles.info}>
+          {dashboardInfo && <span>{dashboardInfo.name}</span>}
+        </div>
+        <div className={styles.grid}>
+          {groupedMiners.map(([groupIndex, miners]) => (
+            <MinerGroup
+              key={groupIndex}
+              groupIndex={groupIndex}
+              miners={miners}
+            />
+          ))}
+        </div>
       </div>
       <MinerModal />
     </div>
