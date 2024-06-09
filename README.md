@@ -1,4 +1,4 @@
-# HashSmith Task Project Documentation
+# Project Documentation
 
 ## About project
 
@@ -47,4 +47,4 @@
 
 ### Note:
 
-This task project is fully packaged and prepared for testing. To launch it, simply navigate to the `dist` folder in your file explorer and open the `index.html` file using your preferred web browser.
+This project is fully packaged and prepared for testing. To launch it, simply navigate to the `dist` folder in your file explorer and open the `index.html` file using your preferred web browser.
